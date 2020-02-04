@@ -1,5 +1,7 @@
 package Presenter;
 
+import java.sql.SQLException;
+
 import Model.IModelLogin;
 import View.IViewLogin;
 
@@ -33,4 +35,18 @@ public class PresenterLogin implements IPresenterLogin
 		e.printStackTrace();
 	   }
 	}
+
+	//signup method to call modellogin interface method of signup
+	public void signup(String username, String password) throws SQLException 
+	{
+		modellogin.signup(username,password);
+	}
+	
+	//delete_account method to call modellogin interface method of delete_account
+	public String delete_account(String username, String password) throws SQLException 
+	{
+		String result = modellogin.delete_account(username,password);
+		return result;
+	}
+
 }
